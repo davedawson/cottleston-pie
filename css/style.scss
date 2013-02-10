@@ -26,13 +26,15 @@ input,button,textarea,select,optgroup,option { font-family: inherit; font-size: 
 input,button,textarea,select { *font-size: 100%; }
 
 // Import 
-// @import url('gridset.css');
+@import url('fonts/font-face.css');
 
 // Variables
 $radius: 4px;
-$serif: "ff-tisa-web-pro", Georgia, Times, serif;
-$sans: "ff-tisa-sans-web-pro", Helvetica, Arial, sans-serif;
-$display: "Macha", Georgia, Times, serif; 
+
+$typeThin: "Macha-thin", Helvetica, Arial, sans-serif; 
+$typeBook: "Macha-book", Helvetica, Arial, sans-serif; 
+$typeMedium: "Macha-medium", Helvetica, Arial, sans-serif; 
+
 $break-small: 480px;
 $break-medium: 480px;
 $break-semi-large: 768px;
@@ -76,37 +78,73 @@ $color-text: #4c4c4c;
   box-sizing: border-box;
 }
 
+@mixin gradient($first, $second, $third) {
+  background: $second;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from($first), to($second), color-stop(.5,$third));
+//  background-image:-webkit-linear-gradient(top, $first 10%, $second 49%, $third 100%);
+  background: -moz-linear-gradient(top,  $first,  $second, $third);
+}
 
 html, body, * {
     text-rendering: optimizeLegibility; 
     -webkit-font-smoothing: antialiased; 
 }
 
- 
+ * { transition: all 0.25s linear; -moz-transition: all 0.25s linear; -webkit-transition: all 0.25s linear; -o-transition: all 0.25s linear; }
 // Body Styles
 body {
-
+  font-family: Macha-book;
 }
 
-.wrap {  margin: 0 auto; max-width: 400px; }
+.wrap {  margin: 0 auto; max-width: 600px; }
 
 
 // Type Styles
 
-h1 { font-size: 48px; color: #fff; }
-h2 { font-size: 18px; text-transform: uppercase; color: #fff; }
-h3 { }
-h4 { }
-p { }
-a { color: $color-dark; text-decoration: none; }
-a:hover { color: $color-hover; }
-ul, ol { margin: 0.6em 0; padding: 0; font: 1.4rem $serif; color: rgba(0,0,0,0.5); line-height: 1.4em; }
-ul li, ol li { list-style-type: disc; margin: 0.3em 0 0.3em 1.2em;
-  @include respond-to(handhelds) { font-size: 1em; }
-  @include respond-to(medium-screens) { font-size: 0.8em; }
-  @include respond-to(wide-screens) {}} 
+h1 { 
+  font: 48px $typeThin;
+  color: #fff;
 
-blockquote { font: normal 1.3em/1.3em $sans;  color: #666; margin: 1em;  }
+}
+h2 { 
+  font: 18px $typeMedium;
+  text-transform: uppercase; 
+  letter-spacing: 0.3em;
+  color: #fff; 
+  margin-bottom: 50px;
+}
+h3 { 
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 15px; 
+}
+h4 { }
+p { 
+  color: #fff;
+}
+a { 
+  color: #fff; 
+  text-decoration: none; 
+  padding-bottom: 2px; 
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+a:hover { 
+  border-bottom: 2px solid rgba(255,255,255,0.6);
+}
+ul, ol { margin: 0.6em 0; padding: 0; font: 1.4rem ; line-height: 1.4em; }
+ul li, ol li { 
+  list-style-type: disc; 
+  margin: 15px 0 15px;
+  color: #fff;
+  font-size: 18px;
+  @include respond-to(handhelds) {  }
+  @include respond-to(medium-screens) {  }
+  @include respond-to(wide-screens) {  }
+} 
+
+blockquote { font: normal 1.3em/1.3em $typeBook;  color: #666; margin: 1em;  }
 
 // Header 
 
@@ -115,9 +153,6 @@ blockquote { font: normal 1.3em/1.3em $sans;  color: #666; margin: 1em;  }
 @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
-
-  .tweet h3 { font-size: 0.9em; }
-  .tweet { background: rgba(54,59,86,1); }
 /* Styles */
 }
 
@@ -133,29 +168,65 @@ and (max-width : 320px) {
 /* Styles */
 }
 
+header, .current, footer { 
+  padding: 350px 30%;  
+  text-align: center;
+
+  @include respond-to(handhelds) {
+    padding: 150px 10%;  
+  }
+  @include respond-to(medium-screens) {
+    padding: 150px 25%;  
+  }
+  @include respond-to(wide-screens) {
+
+  }
+}
 
 header { 
-	background: #f10f43;
+  @include gradient(#fe0d3a, #ff0048, #ea1148);
+}
+
+header hr {
+  width: 30%;
+  background: rgba(255,255,255,0.2);
+  border: 0;
+  height: 4px; 
+  margin: 55px auto;
+}
+
+.intro { 
+  background: #000;
+  padding: 50px;
+  border-top: 4px solid #fff;
+}
+
+.intro p {
+  text-align: center;
+  font-size: 28px;
+}
+.intro .wrap { 
+  max-width: 860px;
 }
 .current { 
-	background: #151619;
+  @include gradient(#215778, #254a6e, #29284b);
+  border: 4px solid #fff;
+  border-left: 0;
+  border-right: 0;
 }
-
+.current li { 
+  list-style-type: none;
+}
 footer {
-	background: #000;
+  background: #1d1f2e;
 }
-// Footer
 
+
+
+/* UTILITIES */
 
 // Clearfix
 .cf:before, .cf:after {content:" "; display:table;}
 .cf:after {clear: both;}
   //IE
   .cf {*zoom: 1;}
-
-
-// Misc 
-
-.hide { display: none; }
-
-  /**** Isotope Filtering ****/

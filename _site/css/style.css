@@ -1,3 +1,4 @@
+@import url("fonts/font-face.css");
 /* Copyright Dave Dawson - 2012 */
 /* RESET */
 /* YUI Reset version: 2.7.0 */
@@ -59,56 +60,66 @@ html, body, * {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
 
+* {
+  transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear; }
+
+body {
+  font-family: Macha-book; }
+
 .wrap {
   margin: 0 auto;
-  max-width: 400px; }
+  max-width: 600px; }
 
 h1 {
-  font-size: 48px;
+  font: 48px "Macha-thin", Helvetica, Arial, sans-serif;
   color: #fff; }
 
 h2 {
-  font-size: 18px;
+  font: 18px "Macha-medium", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #fff;
+  margin-bottom: 50px; }
+
+h3 {
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 15px; }
+
+p {
   color: #fff; }
 
 a {
-  color: #426c6f;
-  text-decoration: none; }
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
 
 a:hover {
-  color: #33595d; }
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6); }
 
 ul, ol {
   margin: 0.6em 0;
   padding: 0;
-  font: 1.4rem "ff-tisa-web-pro", Georgia, Times, serif;
-  color: rgba(0, 0, 0, 0.5);
+  font: 1.4rem;
   line-height: 1.4em; }
 
 ul li, ol li {
   list-style-type: disc;
-  margin: 0.3em 0 0.3em 1.2em; }
-  @media only screen and (max-width: 480px) {
-    ul li, ol li {
-      font-size: 1em; } }
-  @media only screen and (min-width: 481px) and (max-width: 1023px) {
-    ul li, ol li {
-      font-size: 0.8em; } }
+  margin: 15px 0 15px;
+  color: #fff;
+  font-size: 18px; }
 
 blockquote {
-  font: normal 1.3em/1.3em "ff-tisa-sans-web-pro", Helvetica, Arial, sans-serif;
+  font: normal 1.3em/1.3em "Macha-book", Helvetica, Arial, sans-serif;
   color: #666;
   margin: 1em; }
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .tweet h3 {
-    font-size: 0.9em; }
-
-  .tweet {
-    background: #363b56; }
-
   /* Styles */ }
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) {
@@ -116,15 +127,57 @@ blockquote {
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width: 320px) {
   /* Styles */ }
+header, .current, footer {
+  padding: 350px 30%;
+  text-align: center; }
+  @media only screen and (max-width: 480px) {
+    header, .current, footer {
+      padding: 150px 10%; } }
+  @media only screen and (min-width: 481px) and (max-width: 1023px) {
+    header, .current, footer {
+      padding: 150px 25%; } }
+
 header {
-  background: #f10f43; }
+  background: #ff0048;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#fe0d3a), to(#ff0048), color-stop(0.5, #ea1148));
+  background: -moz-linear-gradient(top, #fe0d3a, #ff0048, #ea1148); }
+
+header hr {
+  width: 30%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 0;
+  height: 4px;
+  margin: 55px auto; }
+
+.intro {
+  background: #000;
+  padding: 50px;
+  border-top: 4px solid white; }
+
+.intro p {
+  text-align: center;
+  font-size: 28px; }
+
+.intro .wrap {
+  max-width: 860px; }
 
 .current {
-  background: #151619; }
+  background: #254a6e;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
+  background: -webkit-gradient(linear, left top, left bottom, from(#215778), to(#254a6e), color-stop(0.5, #29284b));
+  background: -moz-linear-gradient(top, #215778, #254a6e, #29284b);
+  border: 4px solid white;
+  border-left: 0;
+  border-right: 0; }
+
+.current li {
+  list-style-type: none; }
 
 footer {
-  background: #000; }
+  background: #1d1f2e; }
 
+/* UTILITIES */
 .cf:before, .cf:after {
   content: " ";
   display: table; }
@@ -134,8 +187,3 @@ footer {
 
 .cf {
   *zoom: 1; }
-
-.hide {
-  display: none; }
-
-/**** Isotope Filtering ****/
