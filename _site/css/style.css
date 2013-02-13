@@ -163,10 +163,10 @@ header, .current, footer {
       padding: 150px 25%; } }
 
 header {
-  background: #ff0048;
+  background: #fe0d3a;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
-  background: -webkit-gradient(linear, left top, left bottom, from(#fe0d3a), to(#ff0048), color-stop(0.5, #ea1148));
-  background: -moz-linear-gradient(top, #fe0d3a, #ff0048, #ea1148); }
+  background: -webkit-gradient(linear, left top, left bottom, from(#e65142), to(#fe0d3a), color-stop(0.5, #fc0130));
+  background: -moz-linear-gradient(top, #e65142, #fe0d3a, #fc0130); }
 
 header hr {
   width: 30%;
