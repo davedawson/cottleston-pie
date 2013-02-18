@@ -94,7 +94,7 @@ h2.location {
   margin-top: 10px;
   letter-spacing: 0.8em;
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.5); }
+  color: rgba(255, 255, 255, 0.4); }
 
 h3 {
   font-size: 22px;
@@ -163,20 +163,20 @@ header, .current, footer {
       padding: 150px 25%; } }
 
 header {
-  background: #fe0d3a;
+  background: #cd4335;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
-  background: -webkit-gradient(linear, left top, left bottom, from(#e65142), to(#fe0d3a), color-stop(0.5, #fc0130));
-  background: -moz-linear-gradient(top, #e65142, #fe0d3a, #fc0130); }
+  background: -webkit-gradient(linear, left top, left bottom, from(#da1e53), to(#cd4335), color-stop(0.5, #cd4335));
+  background: -moz-linear-gradient(top, #da1e53, #cd4335, #cd4335); }
 
 header hr {
   width: 30%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   border: 0;
   height: 4px;
   margin: 55px auto; }
 
 .intro {
-  background: #f91c11;
+  background: #b82212;
   padding: 50px; }
 
 .intro p {

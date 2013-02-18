@@ -126,7 +126,7 @@ h2.location {
   margin-top: 10px; 
   letter-spacing: 0.8em; 
   font-size: 16px; 
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.4);
 }
 h3 { 
   font-size: 22px;
@@ -209,19 +209,19 @@ header, .current, footer {
 }
 
 header { 
-  @include gradient(#e65142, #fe0d3a, #fc0130);
+  @include gradient(#da1e53, #cd4335, #cd4335);
 }
 
 header hr {
   width: 30%;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.3);
   border: 0;
   height: 4px; 
   margin: 55px auto;
 }
 
 .intro { 
-  background: #f91c11;
+  background: #b82212;
   padding: 50px;
 }
 
